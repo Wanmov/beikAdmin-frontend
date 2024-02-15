@@ -19,7 +19,7 @@ service.interceptors.request.use(
   },
   (error: any) => {
     return Promise.reject(error);
-  },
+  }
 );
 
 // 响应拦截器
@@ -34,7 +34,7 @@ service.interceptors.response.use(
       return response;
     }
 
-    Elmessage.error(msg || "系统出错");
+    ElMessage.error(msg || "系统出错");
     return Promise.reject(new Error(msg || "Error"));
   },
   (error: any) => {
@@ -56,7 +56,7 @@ service.interceptors.response.use(
       }
     }
     return Promise.reject(error.message);
-  },
+  }
 );
 
 // 导出 axios 实例

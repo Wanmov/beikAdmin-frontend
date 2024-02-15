@@ -3,6 +3,7 @@ import { LoginData, UserInfo } from "@/api/user/types";
 import { useStorage } from "@vueuse/core";
 import { reqDelUserLogout, reqGetUserInfo, reqPostUserLogin } from "@/api/user";
 import { store } from "@/store";
+import { resetRouter } from "@/router";
 
 export const useUserStore = defineStore("user", () => {
   const user: UserInfo = {

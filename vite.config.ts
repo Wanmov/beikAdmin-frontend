@@ -22,10 +22,11 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
         symbolId: "icon-[dir]-[name]",
       }),
       UnoCSS({
-        /* options */
+        hmrTopLevelAwait: false,
       }),
       AutoImport({
         resolvers: [ElementPlusResolver(), IconsResolver({})],
+        dts: "src/types/auto-imports.d.ts",
       }),
       Components({
         resolvers: [
@@ -34,6 +35,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
             enabledCollections: ["ep"], // element-plus图标库
           }),
         ],
+        dirs: ["src/components", "src/**/components"],
+        dts: "src/types/components.d.ts",
       }),
       Icons({
         // 自动安装图标库
